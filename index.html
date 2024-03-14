@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <title>Kalkulator BMI</title>
+</head>
+
+<body>
+  <header>
+    <h1>Kalkulator BMI</h1>
+    <br>
+    <p class="description">Ini berupa tugas project untuk RevoU yaitu 
+        pembuatan Kalkulator untuk memeriksa Indeks Massa Tubuh atau BMI 
+        by Jovan Lim</p>
+  </header>
+
+  <div class="container">
+    <form action="index.html#result" class="question" onsubmit="submitForm(event)">
+
+        <!-- GENDER -->
+        <div class="gender">
+          <p>Jenis kelamin Anda:</p>
+          <div class="gender-option">
+            <input type="radio" id="laki-laki" name="gender" value="Laki-laki" checked>
+            <label class="label" for="laki-laki">Laki - laki</label>
+  
+            <input type="radio" id="perempuan" name="gender" value="Perempuan">
+            <label class="label" for="perempuan">Perempuan</label>
+          </div>
+        </div>
+        
+        <!-- USIA -->
+        <div class="usia">
+            <p>Usia:</p>
+            <div class="form-input">
+              <input type="number"
+                onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))"
+                id="usia" name="usia" placeholder="Usia Anda" min="0" value="Usia Anda">
+              <div class="error">
+                <p id="usiaNull" class="">Usia harus diisi</p>
+                <p id="usiaRange">Usia harus diantara 2 dan 120</p>
+              </div>
+            </div>
+        </div>
+
+        <!-- BERAT -->
+        <div class="berat">
+            <p>Berat (Kg):</p>
+            <div class="form-input">
+              <input type="number"
+                onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))"
+                id="berat" name="berat" placeholder="Berat Anda" value="Berat Anda">
+              <div class="error">
+                <p id="beratNull">Berat badan harus diisi</p>
+                <p id="beratRange">Berat badan harus diantara 3 dan 600</p>
+              </div>
+            </div>
+        </div>
+
+        <!-- TINGGI -->
+        <div class="tinggi">
+            <p>Tinggi (CM):</p>
+            <div class="form-input">
+              <input type="number" 
+                onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 &&event.charCode <= 57))" 
+                id="tinggi" name="tinggi" placeholder="Tinggi Anda" value="Tinggi Anda">
+              <div class="error">
+                <p id="tinggiNull">Tinggi badan harus diisi</p>
+                <p id="tinggiRange">Tinggi badan harus diantara 40 dan 300</p>
+              </div>
+            </div>
+          </div>
+          
+        <!-- SUBMIT & RESET -->
+        <input type="submit" class="submit" value="Hitung BMI">
+        <input type="reset" class="reset" value="Reset">
+    </form>
+
+    <!-- RESULT CONTAINER -->
+    <div id="result" class="result">
+        <h2>Hasil Perhitungan BMI</h2>
+        <p><span name="answer">Laki - laki</span> usia <span name="answer">25</span> tahun</p>
+        <p>berat <span name="answer">55</span> kg dan tinggi <span name="answer">172</span> cm</p>
+        <p>BMI kamu :</p>
+        <div id="result-number"></div>
+            <p id="bmi-result">18.6</p>
+            <h3 id="kategori-bmi">Berat ideal</h3>
+        </div>
+        <br>
+      </div>
+    </div>
+
+    <div class="info">
+      <p>Informasi tambahan</p>
+    </div>
+
+    <div class="info-question">
+        <p> <strong>Apa itu BMI (Body Mass Index)?</strong> <br> <br>
+            BMI adalah indikator pengukuran yang digunakan untuk menentukan kategori berat badan ideal atau tidak. Metode
+            ini dikembangkan oleh Adolphe Quetelet selama abad ke-19. Melalui hasil perhitungan BMI, kamu akan mengetahui
+            kategori berat badan kamu, apakah kurus, ideal, berlebihan, atau bahkan obesitas. Disisi lain, BMI juga bisa
+            menjadi alat skrining awal untuk melihat risiko kesehatan tertentu. Menurut WHO, hasil BMI yang tidak
+            normal/ideal akan meningkatkan risiko terkena penyakit.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>Made by Jovan Lim</p>
+  </footer>
+
+</body>
+</html>
+
+<script src="./js/script.js"></script>
